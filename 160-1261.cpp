@@ -22,6 +22,9 @@ int dist[101][101];
 // 다익스트라 알고리즘은 프림 MST 알고리즘과 유사함.
 // 재귀가 없음.
 void dfs(int ci, int cj) {
+  if (ci == N - 1 && cj == M - 1)
+    return;
+
   for (int i = 0; i < 4; i++) {
     int ni = ci + di[i], nj = cj + dj[i];
     if (ni >= 0 && ni < N && nj >= 0 && nj < M &&
